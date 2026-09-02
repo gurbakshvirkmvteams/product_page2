@@ -1,0 +1,8 @@
+# Pettoonies™ Your Pet as a Cartoon
+- Started a new test task and created productpage template
+- Created header and navbar according to figma design 
+- Added pet portrait product
+- added variant options in product page 
+- added product background styles metaobjects 
+- added customer notes option in product page
+- solved add to cart api issue, it was not getting value of user notes and background styles

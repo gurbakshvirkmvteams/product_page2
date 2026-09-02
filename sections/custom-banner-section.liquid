@@ -1,0 +1,39 @@
+{%- style -%}
+  .banner-image {
+    margin: 0 auto;
+    max-width: 1024px;
+    border-radius: 50px;
+    border: 2px solid skyblue;
+    overflow: hidden;
+    width: 100%;
+  }
+  .banner-image img {
+     display: block;
+    width: 100%;
+    height: 100%
+  }
+{%- endstyle -%}
+{% if section.settings.my_custom_image != blank %}
+  <div class="banner-image">
+    {{ section.settings.my_custom_image  | image_url: width: 1024 | image_tag: loading: 'lazy' }}
+  </div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Custom Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "my_custom_image",
+        "label": "Choose Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Banner"
+      }
+    ]
+  }
+{% endschema %}

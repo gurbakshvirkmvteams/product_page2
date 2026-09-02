@@ -1,0 +1,21 @@
+<h2>{{ section.settings.custom_text }}</h2>
+
+
+{% schema %}
+{
+    "name": "Custom Text",
+    "settings": [
+        {
+            "type": "text",
+            "default": "Hello",
+            "id": "custom_text",
+            "label": "Enter Text"
+        }
+    ],
+    "presets": [
+        {
+            "name": "My Custom Text"
+        }
+    ]
+}
+{% endschema %}
