@@ -1,0 +1,42 @@
+<section class="image-text-hero" style="background-image: url('{{ section.settings.hero_section_background | image_url: width: 1900 }}');">
+  <div class="image-text-hero-wrapper page-width product-content-container">
+    <div class="image-text--image">{{ section.settings.hero_image | image_url: width: 1200 | image_tag }}</div>
+    <div class="image-text--text-wrapper">
+      {{ section.settings.product_hero_text }}
+      {{ section.settings.product_hero_tagline }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_section_background",
+        "label": "Add Background Image"
+      }, 
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Add Hero Image"
+      }, 
+      {
+        "type": "richtext",
+        "id": "product_hero_text",
+        "label": "Hero Text"
+      }, 
+      {
+        "type": "richtext",
+        "id": "product_hero_tagline",
+        "label": "Hero Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Hero"
+      }
+    ]
+  }
+{% endschema %}

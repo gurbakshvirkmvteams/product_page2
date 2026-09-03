@@ -1,0 +1,31 @@
+{% schema %}
+{
+    "name": "Our Social",
+    "settings": [
+        {
+            "type":"image_picker",
+            "id": "social_logo",
+            "label":"Add Haeding logo"
+        },
+        {
+            "type": "url",
+            "id": "social_link",
+            "label": "Social Link"
+        }
+        ],
+        "blocks": [
+                {
+                    "type": "image",
+                    "name": "Card",
+                    "limit": 6,
+                    "settings": [
+                    {
+                        "type": "video",
+                        "id": "sicial-video",
+                        "label": "Add Video"
+                    }
+                    ]
+                }
+             ],
+}
+{% endschema %}

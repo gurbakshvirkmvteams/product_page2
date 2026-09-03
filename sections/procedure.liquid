@@ -1,0 +1,90 @@
+<style>
+  
+</style>
+<section style="background-color:{{ section.settings.procedure_background_color }};">
+<div class="" style="padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;">
+              {% if section.settings.procedure_section_heading != blank %}
+                <h2 class="">{{ section.settings.procedure_section_heading }}</h2>
+              {% endif %}
+    <div class=" page-width product-content-container">
+        {% for block in section.blocks %}
+          {% comment %} {{ section.settings.card_style }} {% endcomment %}
+            <div class="">
+                <div class="">
+                  {%- if block.settings.procedure_icon != blank -%}
+                      {{ block.settings.procedure_icon | image_url: width: 400 | image_tag }}
+                  {%- endif  -%}
+                </div>
+                <h2 class="">
+                    {{ block.settings.procedure_heading }}</h2>
+                <p>{{ block.settings.procedure_description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+{% schema %}
+  {
+    "name": "Our Procedure",
+    "settings": [
+      {
+        "type": "text",
+        "id": "procedure_section_heading",
+        "label": "Add Section Heading"
+      },
+        {
+        "type": "color",
+        "id": "procedure_background_color",
+        "label": "Section Color"
+      }, 
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 42,
+        "unit": "px",
+        "label": "Padding Top"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 14,
+        "unit": "px",
+        "label": "Padding Bottom"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Card",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "procedure_icon",
+            "label": "Add Icon"
+          }, {
+            "type": "text",
+            "id": "procedure_heading",
+            "label": "Add Heading"
+          }, {
+            "type": "richtext",
+            "id": "procedure_description",
+            "label": "Add description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Support"
+      }
+    ]
+  }
+{% endschema %}

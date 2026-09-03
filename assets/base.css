@@ -2980,7 +2980,7 @@ details-disclosure > details {
 .global-media-settings iframe,
 .global-media-settings model-viewer,
 .global-media-settings video {
-  border-radius: calc(var(--media-radius) - var(--media-border-width));
+  border-radius: calc(var(--media-radius) - var(--media-border-width) + 8px );
 }
 
 .content-container--full-width,
