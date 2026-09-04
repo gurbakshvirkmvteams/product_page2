@@ -57,6 +57,7 @@
         },
         "uploadfly_uploadfly_button_qATwyc": {
           "type": "shopify://apps/uploadfly/blocks/uploadfly_button/0e4c51b1-4134-4114-9565-60979f723166",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker": {
@@ -164,6 +165,106 @@
         "card_style": "small-icon-large-heading"
       }
     },
+    "procedure_fKjP6j": {
+      "type": "procedure",
+      "blocks": {
+        "image_tiGJU3": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/5effe4eb7742c3afd4e8e7659c13e24ccdd28b8b.png",
+            "procedure_heading": "Enjoy your unique artwork",
+            "procedure_description": "<p>One approved, I'll send you your order! Whether it's a digital download or a physical print, I'll send you your unique pet art for you to love and cherish.</p>"
+          }
+        },
+        "image_tLphdR": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/39361f8e0406addd08fea46df0a1b045aa339a34.png",
+            "procedure_heading": "Approve your artwork",
+            "procedure_description": "<p>I'll send you your first draft as soon as it's ready. Send me your edit requests and when you're happy, approve your artwork!</p>"
+          }
+        },
+        "image_D6tzny": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/138931c88035b087c050a066bc03651fb8281e34.png",
+            "procedure_heading": "Upload your photos",
+            "procedure_description": "<p>Upload your pet photos, choose your background and place your order. Then, the fun can begin!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_tiGJU3",
+        "image_tLphdR",
+        "image_D6tzny"
+      ],
+      "name": "Our Procedure",
+      "settings": {
+        "procedure_section_heading": "How it works",
+        "procedure_background_color": "#f3eed7",
+        "padding_top": 58,
+        "padding_bottom": 74
+      }
+    },
+    "image_text_blocks_6NFmeg": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "card_QzgMqN": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/13fc3f65ff656cd2c10fc2ccc72b93641939a8ea_1.png"
+          }
+        },
+        "text_XNyUWG": {
+          "type": "text",
+          "settings": {
+            "card_heading": "A TOUCHING TRIBUTE",
+            "card_description": "The most heartfelt way to memorialize a pet past or present. Many customers request portraits for customers over the rainbow bridge."
+          }
+        },
+        "text_jCx8CF": {
+          "type": "text",
+          "settings": {
+            "card_heading": "A JAW DROPPING GIFT",
+            "card_description": "My PetToonies pet portraits are becoming incredibly popular gifts for dog, cat, and other animal parents around the world. The reactions I have seen from gift receipients on social media are amazing!"
+          }
+        },
+        "card_tVTXXF": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/2edc2ecd481cf29ebde3a124d35827e18e7743b7_1.png"
+          }
+        },
+        "card_TJfwT3": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/95c62465472e48bc35edc034470b2f595834e94f_1.png"
+          }
+        },
+        "text_C776rD": {
+          "type": "text",
+          "settings": {
+            "card_heading": "TO EXPRESS YOUR LOVE",
+            "card_description": "There is nothing more important that expressing your love for your pets. A pet portrait is a fantastic way to add some love to your home. Spruce up a wall with an incredible pet portrait canvas."
+          }
+        }
+      },
+      "block_order": [
+        "card_QzgMqN",
+        "text_XNyUWG",
+        "text_jCx8CF",
+        "card_tVTXXF",
+        "card_TJfwT3",
+        "text_C776rD"
+      ],
+      "name": "Image Text Cards",
+      "settings": {
+        "image_text_section_heading": "The magic effect of a pet portrait",
+        "image_text_section_description": "So many of my customers have sent me incredible feedback, photos and videos featuring their artwork. I want to share with you some of the main reasons people love PetToonies!",
+        "padding_top": 68,
+        "padding_bottom": 55
+      }
+    },
     "our_shipping_features_zPxzzt": {
       "type": "our-shipping-features",
       "blocks": {
@@ -206,45 +307,185 @@
         "card_style": "large-icon-small-heading"
       }
     },
-    "procedure_fKjP6j": {
-      "type": "procedure",
+    "subscription_cards_EcRNeQ": {
+      "type": "subscription-cards",
       "blocks": {
-        "image_tiGJU3": {
-          "type": "image",
+        "card_6AeeFU": {
+          "type": "card",
           "settings": {
-            "procedure_icon": "shopify://shop_images/5effe4eb7742c3afd4e8e7659c13e24ccdd28b8b.png",
-            "procedure_heading": "Enjoy your unique artwork",
-            "procedure_description": "<p>One approved, I'll send you your order! Whether it's a digital download or a physical print, I'll send you your unique pet art for you to love and cherish.</p>"
+            "club_card_image": "shopify://shop_images/a06c3f183efa4136e9fd8379b3cfda9849c1e12b.png",
+            "club_card_heading": "Feb 2021: Romantic Italian Restaurant",
+            "club_card_description": "Love was in the air in February, so it was an obvious choice to send my Toonie Club members some illustrations of their pets enjoying the iconic dish of spaghetti and meatballs."
           }
         },
-        "image_tLphdR": {
-          "type": "image",
+        "card_Q9grgG": {
+          "type": "card",
           "settings": {
-            "procedure_icon": "shopify://shop_images/39361f8e0406addd08fea46df0a1b045aa339a34.png",
-            "procedure_heading": "Approve your artwork",
-            "procedure_description": "<p>I'll send you your first draft as soon as it's ready. Send me your edit requests and when you're happy, approve your artwork!</p>"
+            "club_card_image": "shopify://shop_images/85282b1a7422f8228f416319fa96f14383f2101f.png",
+            "club_card_heading": "July 2020: Witches and Wizards",
+            "club_card_description": "The world's most famous wizard was born in July. So I turned my Toonie Club pets in to witches and wizards! Learn more about Toonie Club by clicking the button below."
           }
         },
-        "image_D6tzny": {
-          "type": "image",
+        "card_NynAKN": {
+          "type": "card",
           "settings": {
-            "procedure_icon": "shopify://shop_images/138931c88035b087c050a066bc03651fb8281e34.png",
-            "procedure_heading": "Upload your photos",
-            "procedure_description": "<p>Upload your pet photos, choose your background and place your order. Then, the fun can begin!</p>"
+            "club_card_image": "shopify://shop_images/b7499c8ab9b314661417bfa21c3e74dd712c3587.png",
+            "club_card_heading": "Oct 2021: Squid Games",
+            "club_card_description": "I decided to surprise my lovely Toonie Club Members with hilarious portraits of their pets dressed as Squid Games participants!"
           }
         }
       },
       "block_order": [
-        "image_tiGJU3",
-        "image_tLphdR",
-        "image_D6tzny"
+        "card_6AeeFU",
+        "card_Q9grgG",
+        "card_NynAKN"
       ],
-      "name": "Our Procedure",
+      "name": "Our Club",
       "settings": {
-        "procedure_section_heading": "How it works",
-        "procedure_background_color": "#F3EED7",
-        "padding_top": 58,
-        "padding_bottom": 74
+        "club_cards_section_heading": "New Scene With Your Pet Every Month!",
+        "club_cards_section_description": "Join the Toonie Club and receive a surprise piece of digital artwork every single month!",
+        "club_button_link": "shopify://pages/about",
+        "club_button_text": "Join the Toonie Club",
+        "padding_top": 57,
+        "padding_bottom": 68
+      }
+    },
+    "our_social_PiLztQ": {
+      "type": "our-social",
+      "blocks": {
+        "image_igiTqB": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/image_17.webp"
+          }
+        },
+        "image_pCWYjP": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/image_16.webp"
+          }
+        },
+        "image_zUrBFU": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/img-114.webp"
+          }
+        },
+        "image_X9YkLB": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/image_15.webp"
+          }
+        },
+        "image_rd7xRp": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/img-115.webp"
+          }
+        },
+        "image_TbNbd7": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/img-116.webp"
+          }
+        },
+        "image_gxw9yE": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/img-111.webp"
+          }
+        },
+        "image_AwHfqk": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/img-112.webp"
+          }
+        },
+        "image_dEfN7V": {
+          "type": "image",
+          "settings": {
+            "social_card_image": "shopify://shop_images/image_16.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_igiTqB",
+        "image_pCWYjP",
+        "image_zUrBFU",
+        "image_X9YkLB",
+        "image_rd7xRp",
+        "image_TbNbd7",
+        "image_gxw9yE",
+        "image_AwHfqk",
+        "image_dEfN7V"
+      ],
+      "name": "Our Social",
+      "settings": {
+        "padding_top": 57,
+        "padding_bottom": 68,
+        "social_background_color": "#f3eed7",
+        "social_logo": "shopify://shop_images/b8d8a6b604215c94f714261ad7205e67db81e75b_1.png",
+        "social_posts": "999+ Post",
+        "social_followers": "97K Followers",
+        "social_tagline": "<h3>Proud pet parents, unite! <a href=\"/pages/about\" title=\"About\">@pettoonies</a></h3>",
+        "social_link_description": "<p>Tag <a href=\"/pages/about\" title=\"About\">#pettoonies</a> on instagram and share your story with us!</p>",
+        "social_button_image": "shopify://shop_images/Instagram_1.png",
+        "social_button": "Follow us on Instagram",
+        "social_button_link_url": ""
+      }
+    },
+    "faq_accordian_9Taqaa": {
+      "type": "faq-accordian",
+      "blocks": {
+        "faq_item_y8LrzC": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Is it really just you?",
+            "faq_answer": "<p>Yes (well, mostly!). Actually I have some friends who help me with customer support during busy periods like Christmas etc., but all the drawing is just done by me!</p>"
+          }
+        },
+        "faq_item_GiT8Ad": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Are my photos good enough to use?",
+            "faq_answer": "<p>I am sure your photos will be perfectly good enough to use! I draw from scratch so really your photos don't need to be amazing. Just good enough for me to see the features of your pet's face and body. If I need more photos or have any questions, I will always email you. So don't worry, let's go ahead and start your order!</p>"
+          }
+        },
+        "faq_item_BXqBY7": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Can I get all my pets together?",
+            "faq_answer": "<p>Yes of course! If you have lots of pets, or you have pets who have passed on and you want them drawn together with the pets who are still here, just send me a group of photos. The pets can be together in one photo, or in separate photos. I will follow your wishes and create your artwork exactly as you want it!</p>"
+          }
+        },
+        "faq_item_KVg6Uk": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What if I'm not happy with my portrait?",
+            "faq_answer": "<p>Sometimes working from a photo could let miss the essence of your pet but I'm always ready to make revisions FREE OF CHARGE until you are 100% satisfied with your pet's portrait!</p>"
+          }
+        },
+        "faq_item_NepkfQ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "How long does it take?",
+            "faq_answer": "<p>I aim to deliver your first draft within 4 days. Sometimes I can take a little longer, but don't worry. I prefer quality over quantity and I make sure that I never have too many orders to work on at any one time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_y8LrzC",
+        "faq_item_GiT8Ad",
+        "faq_item_BXqBY7",
+        "faq_item_KVg6Uk",
+        "faq_item_NepkfQ"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 86,
+        "faq_background_color": "#F8F8F8",
+        "faq_section_title": "Frequently Asked Questions"
       }
     }
   },
@@ -254,7 +495,11 @@
     "main",
     "related-products",
     "our_shipping_features_L79Gm7",
+    "procedure_fKjP6j",
+    "image_text_blocks_6NFmeg",
     "our_shipping_features_zPxzzt",
-    "procedure_fKjP6j"
+    "subscription_cards_EcRNeQ",
+    "our_social_PiLztQ",
+    "faq_accordian_9Taqaa"
   ]
 }
