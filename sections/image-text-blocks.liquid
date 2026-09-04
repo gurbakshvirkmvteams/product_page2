@@ -1,0 +1,157 @@
+<style>
+  .image-text-section {
+    text-align: center;
+  }
+  .image-text-section-heading {
+    font-size: 32px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    margin: 0 0 10px;
+  }
+  .image-text-section-description {
+    font-size: 16px;
+    line-height: 168%;
+    letter-spacing: 0%;
+    max-width: 847px;
+    margin: 0 auto 68px;
+  }
+  .image-text-cards-wrapper{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 105px;
+    column-width: fit-content;
+  }
+   .image-text--card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+  }
+  .image-text--image-card{
+    max-width: 439px;
+    aspect-ratio: 1/1;
+  }
+  .image-text--image-card img{
+    width: 100%;
+    height: auto;
+  }
+ 
+  .image-text--text-card h3{
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 0 0 12px;
+  }
+.image-text--text-card p{
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0%;
+    max-width: 361px;
+    margin: 0;
+}
+</style>
+{% style %}
+    
+{% endstyle %}
+<section class="image-text-section product-content-container page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  {% if section.settings.image_text_section_heading != blank %}
+    <h2 class="image-text-section-heading">{{ section.settings.image_text_section_heading }}</h2>
+  {% endif %}
+  {% if section.settings.image_text_section_description != blank %}
+    <p class="image-text-section-description">{{ section.settings.image_text_section_description }}</p>
+  {% endif %}
+
+  <div class="image-text-cards-wrapper"  >
+    {% for block in section.blocks %}
+       <div class="image-text--card" {{ block.shopify_attributes }}>
+         {% case block.type %}
+            {% when 'card' %}
+                {% if block.settings.card_image != blank %}
+                    <div class="image-text--image-card">
+                        {{ block.settings.card_image | image_url: width:430 | image_tag: loading:'eager'}}
+                    </div>
+                {% endif %}
+                
+            {% when 'text' %}
+                 <div class="image-text--text-card">
+                    <h3>{{ block.settings.card_heading }}</h3>
+                    <p>{{ block.settings.card_description }}</p>
+                 </div>
+        {% endcase %}
+       </div>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Image Text Cards",
+    "settings": [
+      {
+        "type": "text",
+        "id": "image_text_section_heading",
+        "label": "Add Section Heading"
+      }, {
+        "type": "text",
+        "id": "image_text_section_description",
+        "label": "Add Section Description"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 42,
+        "unit": "px",
+        "label": "Padding Top"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 14,
+        "unit": "px",
+        "label": "Padding Bottom"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Image-Card",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Add Image"
+          }
+        ]
+      }, 
+      {
+        "type": "text",
+        "name": "Text-Card",
+        "limit": 3,
+        "settings": [
+        {
+            "type": "text",
+            "id": "card_heading",
+            "label": "Add Card Heading"
+        },
+        {
+            "type": "text",
+            "id":"card_description",
+            "label": "Add Card Description"
+        }
+        ]
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Image Text Cards"
+      }
+    ]
+  }
+{% endschema %}

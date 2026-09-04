@@ -1,22 +1,63 @@
 <style>
-  
+.procedure-section-heading{
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 0;
+    }
+.procedure-section-wrapper{
+    text-align: center;
+}
+.procedure-cards-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.procedure-card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.procedure-card-image-wrapper{
+    max-width: 174px;
+    height: auto;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 78px;
+}
+.procedure-card-image-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.procedure-card-text-heading{
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 20px 0 0;
+}
+.procedure-card-body p{
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    max-width: 386px;
+}
 </style>
 <section style="background-color:{{ section.settings.procedure_background_color }};">
-<div class="" style="padding-top: {{ section.settings.padding_top }}px;
+<div class="procedure-section-wrapper" style="padding-top: {{ section.settings.padding_top }}px;
             padding-bottom: {{ section.settings.padding_bottom }}px;">
               {% if section.settings.procedure_section_heading != blank %}
-                <h2 class="">{{ section.settings.procedure_section_heading }}</h2>
+                <h2 class="procedure-section-heading">{{ section.settings.procedure_section_heading }}</h2>
               {% endif %}
-    <div class=" page-width product-content-container">
+    <div class="procedure-cards-wrapper page-width">
         {% for block in section.blocks %}
           {% comment %} {{ section.settings.card_style }} {% endcomment %}
-            <div class="">
-                <div class="">
+            <div class="procedure-card-body">
+                <div class="procedure-card-image-wrapper">
                   {%- if block.settings.procedure_icon != blank -%}
                       {{ block.settings.procedure_icon | image_url: width: 400 | image_tag }}
                   {%- endif  -%}
                 </div>
-                <h2 class="">
+                <h2 class="procedure-card-text-heading">
                     {{ block.settings.procedure_heading }}</h2>
                 <p>{{ block.settings.procedure_description }}</p>
             </div>
@@ -83,7 +124,7 @@
     ],
     "presets": [
       {
-        "name": "Our Support"
+        "name": "Our Procedure"
       }
     ]
   }

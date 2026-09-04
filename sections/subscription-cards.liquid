@@ -1,0 +1,151 @@
+<style>
+  .club-section {
+    text-align: center;
+  }
+
+  .club-section h2 {
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0;
+    margin: 0 0 6px;
+  }
+  .club-section p {
+    font-size: 16px;
+    line-height: 168%;
+    letter-spacing: 0;
+    max-width: 557px;
+    margin: 0 auto;
+  }
+  .club-section-cards-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 42px;
+    margin-bottom: 26px;
+  }
+  .club-card {
+    display: flex;
+flex-direction: column;
+align-items: center;
+  }
+.club-card-image {
+  max-width: 137px;
+  border-radius: 50%;
+  border: 3px solid #F8F8F8;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.club-card-image img {
+  width: 100%;
+  height: 100%;
+}
+.club-card h3 {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin: 19px 0 0;
+}
+.club-card p {
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.club-section-button {
+  all: unset;
+  cursor: pointer;
+  padding: 13px 49px;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
+  border-radius: 35.5px;
+}
+</style>
+<section class="club-section product-content-container page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <h2>{{ section.settings.club_cards_section_heading }}</h2>
+  <p>{{ section.settings.club_cards_section_description }}</p>
+  <div class="club-section-cards-wrapper">
+    {% for block in section.blocks %}
+      <div class="club-card">
+        <div class="club-card-image">
+          {{ block.settings.club_card_image | image_url: width: 137 | image_tag: loading: 'lazy' }}
+        </div>
+        <h3>{{ block.settings.club_card_heading }}</h3>
+        <p>{{ block.settings.club_card_description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <a href="{{ section.settings.club_button_link }}" class="club-section-button">{{ section.settings.club_button_text }}</a>
+</section>
+{% schema %}
+  {
+    "name": "Our Club",
+    "settings": [
+      {
+        "type": "text",
+        "id": "club_cards_section_heading",
+        "label": "Add Section Heading"
+      },
+      {
+        "type": "text",
+        "id": "club_cards_section_description",
+        "label": "Add Section Description"
+      },
+      {
+        "type": "url",
+        "id": "club_button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "club_button_text",
+        "label": "Button Text"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 57,
+        "unit": "px",
+        "label": "Padding Top"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 68,
+        "unit": "px",
+        "label": "Padding Bottom"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Image-Card",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "club_card_image",
+            "label": "Add Image"
+          }, {
+            "type": "text",
+            "id": "club_card_heading",
+            "label": "Add Card Heading"
+          }, {
+            "type": "text",
+            "id": "club_card_description",
+            "label": "Add Card Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Club"
+      }
+    ]
+  }
+{% endschema %}

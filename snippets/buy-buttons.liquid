@@ -149,5 +149,41 @@
     </pickup-availability>
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const addToCart = document.querySelectorAll('.add-to-cart-button')
+        const addonInput = document.getElementById('addOnInput');
+        const addOnProductId = addonInput.dataset.id
+        addToCart.forEach(addButton =>{
+            addButton.addEventListener('click',  ()=> {
+              // console.log("Add On Input", addonInput.checked);
+              if(addonInput.checked){
+                let formData = {
+                  'items': [{
+                    'id': addOnProductId,
+                    'quantity': 1
+                    }]
+                  };
+
+                  fetch(window.Shopify.routes.root + 'cart/add.js', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                  })
+                  .then(response => {
+                    return response.json();
+                  })
+                  .catch((error) => {
+                    console.error('Error:', error);
+                  });
+              }
+            });
+        })
+        });
+
+    </script>
   {%- endif -%}
 </div>

@@ -1,7 +1,7 @@
-<style>
-  .support-section-container{
-    text-align: center;
-  }
+{% style %}
+.support-section-container{
+  text-align: center;
+}
 .suppport-card{
   display: flex;
   flex-direction: column;
@@ -46,43 +46,39 @@
   margin: 0;
   max-width: 328px;
 }
-/* card_style */
-</style>
+{% endstyle %}
 <section style="background-color:{{ section.settings.background_color }};">
-<div class="support-section-container" style="padding-top: {{ section.settings.padding_top }}px;
-            padding-bottom: {{ section.settings.padding_bottom }}px;">
-              {% if section.settings.section_heading != blank %}
-                <h2 class="support-section-heading">{{ section.settings.section_heading }}</h2>
-              {% endif %}
-    <div class="our-support-wrapper page-width product-content-container"
-            
-            >
-            
-        {% for block in section.blocks %}
-          {% comment %} {{ section.settings.card_style }} {% endcomment %}
-            <div class="suppport-card">
-                <div class="{%- if section.settings.card_style ==  'small-icon-large-heading' -%}
-                            support-card-icon
-                          {%- else -%}
-                            icon-large
-                          {%- endif -%}"
-                          >
-                  {%- if block.settings.support_icon != blank -%}
-                      {{ block.settings.support_icon | image_url: width: 400 | image_tag }}
-                  {%- endif  -%}
+  <div class="support-section-container" style="padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;">
+        {% if section.settings.section_heading != blank %}
+          <h2 class="support-section-heading">{{ section.settings.section_heading }}</h2>
+        {% endif %}
+        <div class="our-support-wrapper page-width product-content-container">
+            {% for block in section.blocks %}
+              {% comment %} {{ section.settings.card_style }} {% endcomment %}
+                <div class="suppport-card">
+                    <div class="{%- if section.settings.card_style ==  'small-icon-large-heading' -%}
+                                support-card-icon
+                              {%- else -%}
+                                icon-large
+                              {%- endif -%}"
+                              >
+                      {%- if block.settings.support_icon != blank -%}
+                          {{ block.settings.support_icon | image_url: width: 400 | image_tag }}
+                      {%- endif  -%}
+                    </div>
+                    <h2 class="{%- if section.settings.card_style ==  "small-icon-large-heading" -%}
+                                  support-card-heading
+                                {%- else -%}
+                                  heading-small
+                                {%- endif -%}"
+                                >
+                        {{ block.settings.support_heading }}</h2>
+                    <p>{{ block.settings.support_description }}</p>
                 </div>
-                <h2 class="{%- if section.settings.card_style ==  "small-icon-large-heading" -%}
-                              support-card-heading
-                            {%- else -%}
-                              heading-small
-                            {%- endif -%}"
-                            >
-                    {{ block.settings.support_heading }}</h2>
-                <p>{{ block.settings.support_description }}</p>
-            </div>
-        {% endfor %}
-    </div>
-</div>
+            {% endfor %}
+        </div>
+  </div>
 </section>
 {% schema %}
   {

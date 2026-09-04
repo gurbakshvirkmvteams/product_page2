@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "product_page_hero_pnBDiV": {
+      "type": "product-page-hero",
+      "name": "Product Hero",
+      "settings": {
+        "hero_section_background": "shopify://shop_images/Group_35_1.png",
+        "hero_image": "shopify://shop_images/7506190ed31c9cb8ab91a8cf9936a96673a23b7e.png",
+        "product_hero_text": "<h2>Subscribe & Save today</h2>",
+        "product_hero_tagline": "<h3>upto <strong>25%</strong> off every month</h3>"
+      }
+    },
     "1788331179760be415": {
       "type": "apps",
       "blocks": {
@@ -41,12 +51,12 @@
           "type": "description",
           "settings": {}
         },
-        "uploadfly_uploadfly_button_qATwyc": {
-          "type": "shopify://apps/uploadfly/blocks/uploadfly_button/0e4c51b1-4134-4114-9565-60979f723166",
-          "settings": {}
-        },
         "price": {
           "type": "price",
+          "settings": {}
+        },
+        "uploadfly_uploadfly_button_qATwyc": {
+          "type": "shopify://apps/uploadfly/blocks/uploadfly_button/0e4c51b1-4134-4114-9565-60979f723166",
           "settings": {}
         },
         "variant_picker": {
@@ -73,8 +83,8 @@
         "rating_zHdRcR",
         "title",
         "description",
-        "uploadfly_uploadfly_button_qATwyc",
         "price",
+        "uploadfly_uploadfly_button_qATwyc",
         "variant_picker",
         "customer_note_C4gdNm",
         "buy_buttons"
@@ -111,11 +121,140 @@
         "padding_top": 48,
         "padding_bottom": 28
       }
+    },
+    "our_shipping_features_L79Gm7": {
+      "type": "our-shipping-features",
+      "blocks": {
+        "image_6w8DjD": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/Vector_25.svg",
+            "support_heading": "Free Shipping",
+            "support_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  labore et dolore magna aliqua.</p>"
+          }
+        },
+        "image_kBH9hE": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/Vector_26.svg",
+            "support_heading": "Hassle-Free 90-Day return",
+            "support_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  labore et dolore magna aliqua.</p>"
+          }
+        },
+        "image_xmYdb6": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/172475_headset_support_icon_1.svg",
+            "support_heading": "Amazing Support",
+            "support_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  labore et dolore magna aliqua.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_6w8DjD",
+        "image_kBH9hE",
+        "image_xmYdb6"
+      ],
+      "name": "Our Support",
+      "settings": {
+        "section_heading": "",
+        "background_color": "#f8f8f8",
+        "padding_top": 42,
+        "padding_bottom": 14,
+        "card_style": "small-icon-large-heading"
+      }
+    },
+    "our_shipping_features_zPxzzt": {
+      "type": "our-shipping-features",
+      "blocks": {
+        "image_F7cNmr": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/Badge_1.svg",
+            "support_heading": "I Make Sure You're Happy",
+            "support_description": "<p>One of the things I pride myself on is making sure you love your artwork. We will work together on your order until you tell me that it's perfect!</p>"
+          }
+        },
+        "image_mUmnDt": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/Badge_1.svg",
+            "support_heading": "A True Passion For Animals",
+            "support_description": "<p>I've always loved animals and I wanted to be a vet when I was a child. I also donate a portion of the profits from my business to animal welfare.</p>"
+          }
+        },
+        "image_pDiaz4": {
+          "type": "image",
+          "settings": {
+            "support_icon": "shopify://shop_images/Badge_1.svg",
+            "support_heading": "Personalized Support",
+            "support_description": "<p>I can provide you with a truly unique and personalized service. Think of me as your pet art concierge. I'll be on the end of any emails and messages you send me.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_F7cNmr",
+        "image_mUmnDt",
+        "image_pDiaz4"
+      ],
+      "name": "Our Support",
+      "settings": {
+        "section_heading": "Why choose me?",
+        "background_color": "#f1dce3",
+        "padding_top": 42,
+        "padding_bottom": 36,
+        "card_style": "large-icon-small-heading"
+      }
+    },
+    "procedure_fKjP6j": {
+      "type": "procedure",
+      "blocks": {
+        "image_tiGJU3": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/5effe4eb7742c3afd4e8e7659c13e24ccdd28b8b.png",
+            "procedure_heading": "Enjoy your unique artwork",
+            "procedure_description": "<p>One approved, I'll send you your order! Whether it's a digital download or a physical print, I'll send you your unique pet art for you to love and cherish.</p>"
+          }
+        },
+        "image_tLphdR": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/39361f8e0406addd08fea46df0a1b045aa339a34.png",
+            "procedure_heading": "Approve your artwork",
+            "procedure_description": "<p>I'll send you your first draft as soon as it's ready. Send me your edit requests and when you're happy, approve your artwork!</p>"
+          }
+        },
+        "image_D6tzny": {
+          "type": "image",
+          "settings": {
+            "procedure_icon": "shopify://shop_images/138931c88035b087c050a066bc03651fb8281e34.png",
+            "procedure_heading": "Upload your photos",
+            "procedure_description": "<p>Upload your pet photos, choose your background and place your order. Then, the fun can begin!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_tiGJU3",
+        "image_tLphdR",
+        "image_D6tzny"
+      ],
+      "name": "Our Procedure",
+      "settings": {
+        "procedure_section_heading": "How it works",
+        "procedure_background_color": "#F3EED7",
+        "padding_top": 58,
+        "padding_bottom": 74
+      }
     }
   },
   "order": [
+    "product_page_hero_pnBDiV",
     "1788331179760be415",
     "main",
-    "related-products"
+    "related-products",
+    "our_shipping_features_L79Gm7",
+    "our_shipping_features_zPxzzt",
+    "procedure_fKjP6j"
   ]
 }

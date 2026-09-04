@@ -6,3 +6,26 @@
 - added product background styles metaobjects 
 - added customer notes option in product page
 - solved add to cart api issue, it was not getting value of user notes and background styles
+
+# Pettoonies™ Your Pet as a Cartoon
+- Adjusted theme default spacing in productsection according to figma 
+- added product varint picker styling according to their names with condition
+- added product media details
+- Created ou support section 
+- Created why choose us section 
+- Created How It Works section 
+- added color swaches to radio buttons
+- Added button stylings according to figma
+
+# Pettoonies™ Your Pet as a Cartoon
+- Added add on product add to cart feature along with main product if user selected its checkbox,
+with shopify cart api
+- Created images text cards bliocks section 
+- Created our club section
+- Created our social section with image blocks
+- Created Faq section with questions as blocks
+
+
+
+
+
