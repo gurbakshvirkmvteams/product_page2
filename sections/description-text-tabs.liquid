@@ -1,0 +1,217 @@
+<style>
+  .description-tab-items {
+    background-color: #FF97AB;
+    text-align: center;
+  }
+  .description-tab-item-button {
+    all: unset;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    padding: 16px;
+    color: #FFFFFF;
+
+  }
+  .description-tab-item-button.active {
+    border-bottom: 2px solid #E75B74;
+  }
+  .description-tab-content {
+    display: none;
+    gap: 43px;
+    justify-content: center;
+  }
+  .description-tab-content.active {
+    display: flex;
+  }
+  .description-tab-image {
+    max-width: 446px;
+    /* max-height: 356px; */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .description-tab-text {
+    max-width: 565px;
+  }
+  .description-tab-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .description-warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 67px;
+  }
+
+.description-warning-text {
+  max-width: 291px;
+  width: 100%;
+  display: flex;
+  border-radius: 41px;
+  box-shadow: 0 4px 20px 5px #0000000D;
+  overflow: hidden;
+  align-items: center;
+  height: 59px;
+}
+.warning-banner {
+  background-color: #FF2805;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 59px;
+  padding-right: 19px;
+}
+.description-w{
+  max-width: 797px;
+text-align:center;
+margin:26px 0 0;
+}
+.description-warning-banner-text p {
+  color: #FF2805;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  padding: 0 0 0 23px;
+  margin: 0;
+}
+
+</style>
+<section>
+  <div>
+    {% if section.blocks.size > 1 %}
+      <div class="description-tab-items">
+        {% for block in section.blocks %}
+          <button class="description-tab-item-button" data-tab-id="{{ block.settings.description_title_button }}">
+            {{ block.settings.description_title_button }}
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="description-tab-item product-content-container page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+      {% for block in section.blocks %}
+        <div class="description-tab-content" data-tab-id="{{ block.settings.description_title_button }}">
+          {% if block.settings.description_image != blank %}
+            <div class="description-tab-image">
+              {{ block.settings.description_image | image_url: width: 600 | image_tag }}
+            </div>
+          {% endif %}
+          <div class="description-tab-text">
+            <p>{{ block.settings.short_descrition }}</p>
+            <div>{{ block.settings.descrition }}</div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="description-warning">
+        <div class="description-warning-text">
+          <div class="warning-banner">
+            <svg
+              width="31"
+              height="28"
+              viewBox="0 0 31 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4107 27.7529H7.49824C6.18098 27.7617 4.88505 27.429 3.74351 26.7889C2.60197 26.1488 1.65596 25.2245 1.00261 24.1107C0.346086 23.0202 0 21.7789 0 20.5148C0 19.2507 0.346086 18.0094 1.00261 16.9188L8.99449 3.61041C9.65361 2.51166 10.5968 1.6002 11.7302 0.966755C12.8636 0.333314 14.1477 0 15.4545 0C16.7613 0 18.0454 0.333314 19.1788 0.966755C20.3122 1.6002 21.2554 2.51166 21.9145 3.61041L29.8826 16.9188C30.5391 18.0094 30.8852 19.2507 30.8852 20.5148C30.8852 21.7789 30.5391 23.0202 29.8826 24.1107C29.2312 25.221 28.289 26.1432 27.152 26.7831C26.015 27.4229 24.724 27.7576 23.4107 27.7529ZM15.4545 2.31541C14.563 2.30764 13.6854 2.53048 12.9114 2.96115C12.1373 3.39182 11.4946 4.01489 11.0489 4.76666L3.08074 18.0867C2.63486 18.8243 2.39973 19.6646 2.39973 20.5206C2.39973 21.3765 2.63486 22.2168 3.08074 22.9545C3.52192 23.7152 4.16433 24.347 4.94119 24.7842C5.71805 25.2214 6.601 25.448 7.49824 25.4404H23.4107C24.31 25.4501 25.1954 25.2245 25.9745 24.7872C26.7537 24.3499 27.398 23.717 27.8401 22.9545C28.286 22.2168 28.5211 21.3765 28.5211 20.5206C28.5211 19.6646 28.286 18.8243 27.8401 18.0867L19.8601 4.76666C19.4144 4.01489 18.7717 3.39182 17.9976 2.96115C17.2236 2.53048 16.346 2.30764 15.4545 2.31541Z" fill="white" />
+              <path d="M17.8293 8.09669C17.5445 7.74964 17.1832 7.46946 16.772 7.27691C16.3609 7.08436 15.9105 6.98437 15.4543 6.98438C14.9981 6.98437 14.5477 7.08436 14.1366 7.27691C13.7254 7.46946 13.3641 7.74964 13.0793 8.09669C12.7925 8.44843 12.5938 8.86041 12.4989 9.29995C12.4041 9.73949 12.4158 10.1945 12.533 10.6289L14.2668 17.6242C14.3312 17.8742 14.4795 18.0961 14.6881 18.2547C14.8968 18.4132 15.154 18.4993 15.4187 18.4993C15.6834 18.4993 15.9405 18.4132 16.1492 18.2547C16.3579 18.0961 16.5062 17.8742 16.5705 17.6242L18.3637 10.6173C18.4806 10.1855 18.4932 9.73323 18.4005 9.2959C18.3078 8.85857 18.1123 8.4481 17.8293 8.09669ZM16.0955 10.0623L15.4543 12.5829L14.813 10.0623C14.7844 9.96743 14.7803 9.86714 14.801 9.77033C14.8217 9.67352 14.8667 9.58318 14.9318 9.50731C14.9926 9.42833 15.0715 9.36423 15.1622 9.32008C15.2529 9.27593 15.3529 9.25294 15.4543 9.25294C15.5557 9.25294 15.6557 9.27593 15.7464 9.32008C15.8371 9.36423 15.916 9.42833 15.9768 9.50731C16.0419 9.58318 16.0869 9.67352 16.1076 9.77033C16.1283 9.86714 16.1242 9.96743 16.0955 10.0623Z" fill="white" />
+              <path d="M15.4531 23.1279C16.4369 23.1279 17.2344 22.3514 17.2344 21.3936C17.2344 20.4357 16.4369 19.6592 15.4531 19.6592C14.4694 19.6592 13.6719 20.4357 13.6719 21.3936C13.6719 22.3514 14.4694 23.1279 15.4531 23.1279Z" fill="white" />
+            </svg>
+          </div>
+          <div class="description-warning-banner-text">
+            <p>Attention</p>
+          </div>
+        </div>
+        <p class="description-w">{{ section.settings.description_warning_text }}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.description-tab-item-button');
+        const tabContents = document.querySelectorAll('.description-tab-content');
+                tabContents[0].classList.add('active');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab-id');
+                    tabContents.forEach(tabcontent => {
+                        tabcontent.classList.remove('active');
+
+                        if (tabcontent.getAttribute('data-tab-id') === tabId) {
+                            tabcontent.classList.add('active');
+                            button.classList.add('active');
+                        } else {
+                            tabcontent.classList.remove('active');
+                            button.classList.remove('active');
+                        }
+                    });
+                });
+            });
+    });
+</script>
+{% schema %}
+  {
+    "name": "Description Tabs",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 61,
+        "unit": "px",
+        "label": "Padding Top"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 89,
+        "unit": "px",
+        "label": "Padding Bottom"
+      }, {
+        "type": "text",
+        "id": "description_warning_text",
+        "label": "Warning Text",
+        "default": "Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "description-item",
+        "name": "Description Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "description_title_button",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "short_descrition",
+            "label": "Short Description"
+          }, {
+            "type": "richtext",
+            "id": "descrition",
+            "label": "Description"
+          }, {
+            "type": "image_picker",
+            "id": "description_image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Description Tabs"
+      }
+    ]
+  }
+{% endschema %}
