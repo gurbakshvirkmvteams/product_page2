@@ -165,6 +165,49 @@
         "card_style": "small-icon-large-heading"
       }
     },
+    "description_text_tabs_EtzfbP": {
+      "type": "description-text-tabs",
+      "blocks": {
+        "description_item_a8Gwi8": {
+          "type": "description-item",
+          "settings": {
+            "description_title_button": "Description",
+            "short_descrition": "Have you ever wondered what your pet would look like as a cute cartoon character? Well, my name is Irene de Prada and I'm a professional artist specializing in cute pet portraits!",
+            "descrition": "<p><strong>Why choose me?</strong></p><p>• <strong>Hand drawn custom pet artwork</strong> created with love, care and attention to detail</p><p>• Express your pet's unique personality and facial expression with a unique piece of art</p><p>• The most thoughtful, jaw-dropping gift to pet owners everywhere with a satisfaction guarantee.</p><p>• <strong>I offer free previews and unlimited revisions with every order</strong> -  satisfaction guaranteed for every pet parent!</p>",
+            "description_image": "shopify://shop_images/bd80f2c1b6bab627e570160b64cc3fcb883e4c2d.png"
+          }
+        },
+        "description_item_6rrnV6": {
+          "type": "description-item",
+          "settings": {
+            "description_title_button": "Artwork Times",
+            "short_descrition": "Have you ever wondered what your pet would look like as a cute cartoon character?",
+            "descrition": "<p>Why choose me?</p><p>• Hand drawn custom pet artwork created with love, care and      attention to detail• Express your pet's unique personality and facial expression with a     unique piece of art</p>",
+            "description_image": "shopify://shop_images/img-116.webp"
+          }
+        },
+        "description_item_RzyWJj": {
+          "type": "description-item",
+          "settings": {
+            "description_title_button": "Why Us?",
+            "short_descrition": "Cute cartoon character?",
+            "descrition": "<p>Why choose me?</p><p>• Hand drawn custom pet artwork created with love, care and      attention to detail• Express your pet's unique personality and facial expression with a     unique piece of art</p>",
+            "description_image": "shopify://shop_images/img-115_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "description_item_a8Gwi8",
+        "description_item_6rrnV6",
+        "description_item_RzyWJj"
+      ],
+      "name": "Description Tabs",
+      "settings": {
+        "padding_top": 61,
+        "padding_bottom": 89,
+        "description_warning_text": "Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!"
+      }
+    },
     "procedure_fKjP6j": {
       "type": "procedure",
       "blocks": {
@@ -343,7 +386,7 @@
       "name": "Our Club",
       "settings": {
         "club_cards_section_heading": "New Scene With Your Pet Every Month!",
-        "club_cards_section_description": "Join the Toonie Club and receive a surprise piece of digital artwork every single month!",
+        "club_cards_section_description": "x",
         "club_button_link": "shopify://pages/about",
         "club_button_text": "Join the Toonie Club",
         "padding_top": 57,
@@ -484,7 +527,7 @@
       "settings": {
         "padding_top": 32,
         "padding_bottom": 86,
-        "faq_background_color": "#F8F8F8",
+        "faq_background_color": "#f8f8f8",
         "faq_section_title": "Frequently Asked Questions"
       }
     }
@@ -495,6 +538,7 @@
     "main",
     "related-products",
     "our_shipping_features_L79Gm7",
+    "description_text_tabs_EtzfbP",
     "procedure_fKjP6j",
     "image_text_blocks_6NFmeg",
     "our_shipping_features_zPxzzt",

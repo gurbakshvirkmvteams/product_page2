@@ -1,0 +1,111 @@
+<style>
+  .review-images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 47px;
+  }
+  .review-card-image {
+    max-width: 209px;
+    max-height: 212px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .review-images-wrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .review-texts-container{
+    text-align: center;
+  }
+  .review-texts-container h2{
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .review-texts-container p{
+    font-size: 16px;
+    line-height: 168%;
+    letter-spacing: 0%;
+    max-width:705px;
+    margin: 15px auto 0;
+
+  }
+</style>
+<div style="background-color:{{ section.settings.description_background_color }}">
+  <div class="review-texts-container product-content-container page-width" style="padding-top: {{ section.settings.padding_top }}px; ">
+    <h2 >{{ section.settings.review_heading }}</h2>
+    {{ section.settings.description_tagline }}
+  </div>
+  <div class="review-images-wrapper product-content-container page-width" style="padding-bottom: {{ section.settings.padding_bottom }}px;">
+    {% for block in section.blocks %}
+      {% if block.settings.review_card_image != blank %}
+        <div class="review-card-image">
+          {{ block.settings.review_card_image | image_url: width: 300 | image_tag }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Review Top",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 55,
+        "unit": "px",
+        "label": "Padding Top"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 68,
+        "unit": "px",
+        "label": "Padding Bottom"
+      },
+      {
+        "type": "color",
+        "id": "description_background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "text",
+        "id": "review_heading",
+        "label": "Add Heading"
+      }, {
+        "type": "richtext",
+        "id": "description_tagline",
+        "label": "Add Description Tagline"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Images",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "review_card_image",
+            "label": "Add Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Review Top"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,118 @@
+<style>
+  .tiktok-section{
+    text-align: center;
+  }
+.tiktok-section__header{
+    margin-bottom:44px;
+}
+.tiktok-section__subtitle{
+    margin:0;
+}
+.tiktok-section__logo {
+    display: inline-block;
+    max-width: 180px;
+    max-height: 80px;
+}
+.tiktok-section__logo img{
+    width: 100%;
+    height: 100%;
+}
+.tiktok-section__videos{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tiktok-card{
+    max-width: 289px;
+    width: 100%;
+    height: 379px;
+}
+.tiktok-card video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+
+<section class="tiktok-section  page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="tiktok-section__header">
+    {% if section.settings.our_social_logo != blank %}
+      <div class="tiktok-section__logo">
+        {{ section.settings.our_social_logo | image_url: width: 200 | image_tag }}
+      </div>
+    {% endif %}
+
+    <p class="tiktok-section__subtitle">Follow us on
+      <span>{{ section.settings.our_social_handle }}</span>
+    </p>
+  </div>
+
+  <div class="tiktok-section__videos">
+    {% for block in section.blocks %}
+      <div class="tiktok-card" {{ block.shopify_attributes }}>
+        {% if block.settings.video != blank %}
+          {{ block.settings.video | video_tag: loop: true, muted: true, controls: false, playsinline: true }}
+
+          <div class="tiktok-card__play"></div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "TikTok videos",
+    "settings": [
+        {
+        "type": "range",
+        "id": "padding_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 57,
+        "unit": "px",
+        "label": "Padding Top"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 68,
+        "unit": "px",
+        "label": "Padding Bottom"
+      },
+      {
+        "type": "image_picker",
+        "id": "our_social_logo",
+        "label": "Add Logo"
+      }, {
+        "type": "text",
+        "id": "our_social_handle",
+        "label": "Add Social Handle"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video",
+        "name": "Video",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TikTok videos"
+      }
+    ]
+  }
+{% endschema %}

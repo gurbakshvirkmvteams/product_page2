@@ -27,12 +27,24 @@
   }
   .description-tab-image {
     max-width: 446px;
-    /* max-height: 356px; */
+    max-height: 356px;
     border-radius: 12px;
     overflow: hidden;
   }
-  .description-tab-text {
+  .description-tab-text p {
     max-width: 565px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+  }
+  .description-tab-text .short-desc {
+    margin-bottom: 20px;
+  }
+  .description-tab-text .long-desc strong {
+    font-weight: 700;
+    line-height: 28px;
   }
   .description-tab-image img {
     width: 100%;
@@ -45,39 +57,39 @@
     margin-top: 67px;
   }
 
-.description-warning-text {
-  max-width: 291px;
-  width: 100%;
-  display: flex;
-  border-radius: 41px;
-  box-shadow: 0 4px 20px 5px #0000000D;
-  overflow: hidden;
-  align-items: center;
-  height: 59px;
-}
-.warning-banner {
-  background-color: #FF2805;
-  padding-left: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 59px;
-  padding-right: 19px;
-}
-.description-w{
-  max-width: 797px;
-text-align:center;
-margin:26px 0 0;
-}
-.description-warning-banner-text p {
-  color: #FF2805;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0;
-  padding: 0 0 0 23px;
-  margin: 0;
-}
+  .description-warning-text {
+    max-width: 291px;
+    width: 100%;
+    display: flex;
+    border-radius: 41px;
+    box-shadow: 0 4px 20px 5px #0000000D;
+    overflow: hidden;
+    align-items: center;
+    height: 59px;
+  }
+  .warning-banner {
+    background-color: #FF2805;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 59px;
+    padding-right: 19px;
+  }
+  .description-w {
+    max-width: 797px;
+    text-align: center;
+    margin: 26px 0 0;
+  }
+  .description-warning-banner-text p {
+    color: #FF2805;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    padding: 0 0 0 23px;
+    margin: 0;
+  }
 
 </style>
 <section>
@@ -100,8 +112,8 @@ margin:26px 0 0;
             </div>
           {% endif %}
           <div class="description-tab-text">
-            <p>{{ block.settings.short_descrition }}</p>
-            <div>{{ block.settings.descrition }}</div>
+            <p class="short-desc">{{ block.settings.short_descrition }}</p>
+            <div class="long-desc">{{ block.settings.descrition }}</div>
           </div>
         </div>
       {% endfor %}

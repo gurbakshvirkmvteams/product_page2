@@ -474,19 +474,61 @@
                 </svg>
                 <p>Free Shipping on all orders</p>
               </div>
-              <div class="product-custom-upload" style="margin: 15px 0;">
-                <label for="custom-image-upload" style="display: block; margin-bottom: 5px; font-weight: 500;">
-                  Upload Your Image 
-                </label>
-                <input 
-                  type="file" 
-                  id="custom-image-upload" 
-                  name="properties[Custom Image]" 
-                  accept="image/*" 
-                  form="product-form-{{ section.id }}" 
-                  required
-                >
-              </div>
+              <div class="product-custom-upload">
+
+  <div class="product-custom-upload__header">
+    <label for="custom-image-upload" class="product-custom-upload__title">
+      Upload your photos
+    </label>
+
+    <a href="#" class="product-custom-upload__guide">
+      <span class="product-custom-upload__guide-icon">▧</span>
+      Photo guide
+    </a>
+  </div>
+
+    <input
+      type="file"
+      id="custom-image-upload"
+      name="properties[Custom Image]"
+      accept="image/*"
+      form="product-form-{{ section.id }}"
+      required
+    >
+    <label
+      for="custom-image-upload"
+      class="product-custom-upload__button"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 16V4"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M7 9L12 4L17 9"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M4 20H20"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span>Upload Photos</span>
+    </label>
+</div>
               <div class="product-custom-field">
                 <label for="customText" >Any Extra Notes for the Artist (Optional):</label>
                 {% comment %} <input type="text" id="customText" name="properties[Personalization]"> {% endcomment %}

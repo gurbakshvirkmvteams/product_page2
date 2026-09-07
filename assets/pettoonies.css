@@ -3,7 +3,27 @@
     margin-left: auto ;
     margin-right: auto;
 }
-
+.announcement-bar__message.h5{
+   color: #FFFFFF;
+}
+/* navbar */
+.alireviews-review-box {
+    margin-top:0 !important;
+}
+.custom-header__inline-menu .list-menu--inline .header__menu-item{
+/* font-weight: 400; */
+font-size: 15px;
+line-height: 100%;
+letter-spacing: 0%;
+padding:1.1rem 2.4rem;
+}
+.custom-header__inline-menu .list-menu--inline li:first-child{
+    border-radius: 22px;
+    background: #522A97;
+}
+.custom-header__inline-menu .list-menu--inline li:first-child a{
+    color: #FFFFFF;
+}
 /* product page  */
 .product__info-container>*+* {
     margin: 20px 0 0 !important;
@@ -12,6 +32,7 @@
     margin-top: 31px !important;
 }
 .custom-product__title {
+    margin-top: 0 !important;
     margin-bottom: 0.9rem !important;
 }
 
@@ -57,7 +78,78 @@
     padding: 2px 6px;
     border-radius: 4px;
 }
+.product-custom-upload label{
+font-weight: 600;
+font-size: 14px;
+line-height: 168%;
+letter-spacing: 0%;
+color: #333333;
 
+}
+.product-custom-upload {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.product-custom-upload__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.product-custom-upload__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #333;
+}
+
+.product-custom-upload__guide {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.product-custom-upload__guide-icon {
+  font-size: 18px;
+}
+
+#custom-image-upload {
+  display: none;
+}
+
+.product-custom-upload__button {
+  width: 100%;
+  height: 53px;
+  background: #e5e5e5;
+  border-radius: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+}
+
+.product-custom-upload__button:hover {
+  background: #dcdcdc;
+}
+
+.product-custom-upload__button svg {
+  flex-shrink: 0;
+}
 /* variant css  */
 .custom-form__label {
     font-weight: 600;

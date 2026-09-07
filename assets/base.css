@@ -140,7 +140,9 @@
 
 :root,
 .color-icon-text {
-  --color-icon: rgb(var(--color-base-text));
+  /* --color-icon: rgb(var(--color-base-text)); */
+  --color-icon:  rgba(var(--color-button), var(--alpha-button-background));
+
 }
 
 .color-icon-accent-1 {

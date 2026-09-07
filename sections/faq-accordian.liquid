@@ -3,40 +3,58 @@
     text-align: center;
   }
 
-  .faq-section__title {
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: 0;
-  }
-  .faq-section__container {
+.faq-section__title {
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+margin:0 0 29px
+}
+.faq-section__container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
-  .faq-item {
-    background-color: #FFFFFF;
-    max-width: 1090px;
-    text-align: left;
-    padding: 20px 28px;
-    border: 1px solid #E5E5E5;
-  }
-  .faq-item__question {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0;
-    color: #000000;
-  }
-  .faq-item__answer {
+    gap: 9px;
+}
+.faq-item {
+  background-color: #FFFFFF;
+  max-width: 1090px;
+  text-align: left;
+  padding: 18px 28px;
+  border: 1px solid #E5E5E5;
+}
+.faq-item__question {
+      display: flex;
+    justify-content: space-between;
+font-weight: 600;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #000000;
+}
+.faq-item__answer {
     margin: 24px 0 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.4;
-    letter-spacing: 0;
+    letter-spacing: 0%;
     display: none;
-  }
+}
+.faq-item__answer.active {
+  display: block;
+}
+.faq_icon.active {
+  display: block;
+}
+.faq_icon {
+  display: none;
+}
+.expand-button{
+  all: unset;
+  cursor: pointer;
+  display:grid;
+  place-items:center;
+}
 </style>
-<section class="faq-section " style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color:{{ section.settings.faq_background_color }}">
+<section class="faq-section " style=" padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color:{{ section.settings.faq_background_color }}">
   <div class="product-content-container page-width">
     {% if section.settings.faq_section_title != blank %}
       <h2 class="faq-section__title">{{ section.settings.faq_section_title }}</h2>
@@ -49,24 +67,25 @@
               <div class="faq-item" {{ block.shopify_attributes }}>
                 <div class="faq-item__question">
                   <span>{{ block.settings.faq_question }}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus"
-                    fill="none" viewBox="0 0 10 10">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-                      fill="currentColor">
-                    </path>
-                  </svg>
-
+                  <button class="expand-button">
+                    <span class="faq_icon active">
+                      <svg width="13"  xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" viewBox="0 0 10 10">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
+                          fill="currentColor">
+                        </path>
+                      </svg>
+                    </span>
+                    <span class="faq_icon">
+                      <svg width="13" height="3" viewBox="0 0 13 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="13" height="3" rx="1.5" fill="currentColor"/>
+                      </svg>
+                    </span>
+                  </button>
                 </div>
                 <div class="faq-item__answer">
                   {{ block.settings.faq_answer }}
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus"
-                    fill="none" viewBox="0 0 10 10">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-                      fill="currentColor">
-                    </path>
-                  </svg>  
                 </div>
               </div>
             {% endif %}
@@ -75,11 +94,26 @@
     </div>
   </div>
 </section>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-item__question');
+    const answer = item.querySelector('.faq-item__answer');
+    const button = question.querySelector('button');
+    button.addEventListener('click', () =>{
+      answer.classList.toggle('active');
+      button.children[0].classList.toggle('active');
+      button.children[1].classList.toggle('active');
+    })
+  });
+  })
+  </script>
 {% schema %}
   {
     "name": "FAQ Accordion",
     "settings": [
+     
       {
         "type": "range",
         "id": "padding_top",

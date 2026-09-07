@@ -5,11 +5,11 @@
     justify-content: center;
     gap: 94px;
   }
-  .social-section-logo{
+  .social-section-logo {
     max-width: 183px;
     margin-bottom: 42px;
   }
-  .social-section-logo img{
+  .social-section-logo img {
     width: 100%;
     height: 100%;
   }
@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 541px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
   }
   .social-content-wrapper {
     display: flex;
@@ -25,53 +25,78 @@
     justify-content: center;
     max-width: 449px;
   }
-  .social-card-image{
+  .social-card-image {
     /* max-width: 138px; */
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     width: 100%;
     height: fit-content;
   }
-  .social-card-image img{
+  .social-card-image img {
     width: 100%;
     height: 100%;
     display: block;
   }
-  .social-reach-details{
-    font-weight: 700;   
+  .social-reach-details {
+    font-weight: 700;
     font-size: 14px;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     display: flex;
-    gap: 47px;
+    gap: clamp(16px, 3vw, 47px);
     margin: 0 0 10px;
   }
-.social-content-tagline h3{
+  .social-content-tagline h3 {
     font-weight: 700;
     font-size: clamp(28px, 2.5vw, 40px);
     line-height: 1.4;
-    letter-spacing: 0%;
-}
-.social-content-tagline h3 a, .social-content-description * a{
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .social-reach-details span:nth-child(2) {
+    color: rgb(var(--gradient-base-accent-2)) !important;
+  }
+  .social-content-tagline h3 a,
+  .social-content-description * a {
     all: unset;
     cursor: pointer;
+/* color:var(--color-badge-background); */
+    color: rgb(var(--gradient-base-accent-2)) !important;
 
-}
-.social-content-description *{
+  }
+  .social-content-description * {
     max-width: 384px;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.4;
-    letter-spacing: 0%;
-}
-@media (max-width:750px) {
+    letter-spacing: 0;
+    margin:15px 0 0 !important  ;
+  }
+  .social-content-description-btn {
+    all: unset;
+    padding: 18px 35px;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: rgba(var(--color-button), var(--alpha-button-background)) !important;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-top: 33px;
+  }
+  @media (max-width: 750px) {
     .social-section-container {
-    flex-direction: column;
-  }
+      flex-direction: column;
+    }
     .social-images-wrapper {
-        max-width: 100%;
-        height:fit-content;
+      max-width: 100%;
+      height: fit-content;
+    }
   }
-}
 </style>
 
 <section class="social-section " style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color:{{ section.settings.social_background_color }}">
@@ -80,14 +105,17 @@
       {% comment %} {{ section.settings.social_logo | image_url: width: 183 | image_tag: loading: 'lazy' }} {% endcomment %}
       {% if section.settings.social_logo %}
         <div class="social-section-logo">
-            {{ section.settings.social_logo | image_url: width: 137 | image_tag: loading: 'lazy' }}
+          {{ section.settings.social_logo | image_url: width: 137 | image_tag: loading: 'lazy' }}
         </div>
       {% endif %}
-      <div class="social-reach-details"><span>{{ section.settings.social_posts }}</span><span>{{ section.settings.social_followers }}</span></div>
+      <div class="social-reach-details">
+        <span>{{ section.settings.social_posts }}</span>
+        <span>{{ section.settings.social_followers }}</span>
+      </div>
       <div class="social-content-tagline">{{ section.settings.social_tagline }}</div>
       <div class="social-content-description">{{ section.settings.social_link_description }}</div>
       {% if section.settings.social_button %}
-        <a href="{{ section.settings.social_button_link_url }}">
+        <a href="{{ section.settings.social_button_link_url }}" class="social-content-description-btn">
           {% if section.settings.social_button_image %}
             {{ section.settings.social_button_image | image_url: width: 26 | image_tag: loading: 'lazy' }}
           {% endif %}
@@ -99,12 +127,13 @@
     <div class="social-images-wrapper">
       {% for block in section.blocks %}
         {% if block.settings.social_card_image %}
-            <div class="social-card-image">
-                {{ block.settings.social_card_image | image_url: width: 260 | image_tag: loading: 'lazy' }}
-            </div>
+          <div class="social-card-image">
+            {{ block.settings.social_card_image | image_url: width: 260 | image_tag: loading: 'lazy' }}
+          </div>
         {% endif %}
       {% endfor %}
     </div>
+    
   </div>
 </section>
 {% schema %}
@@ -130,16 +159,16 @@
         "default": 68,
         "unit": "px",
         "label": "Padding Bottom"
-      },{
-        "type":"color",
+      },
+      {
+        "type": "color",
         "id": "social_background_color",
-        "label":"Background Color"
+        "label": "Background Color"
       },
       {
         "type": "header",
         "content": "Social Content"
-      },
-      {
+      }, {
         "type": "image_picker",
         "id": "social_logo",
         "label": "Add Image"

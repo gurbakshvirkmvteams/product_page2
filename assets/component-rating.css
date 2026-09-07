@@ -4,8 +4,9 @@
 }
 
 .product .rating-star {
-  --letter-spacing: 0.8;
-  --font-size: 1.7;
+  --letter-spacing: 0.2;
+  --font-size: 1.8;
+  font-weight: calc(var(--font-body-weight) * 1.5);
 }
 
 .card-wrapper .rating-star {
@@ -46,7 +47,7 @@
 
 .rating-count {
   display: inline-block;
-  margin: 0;
+  margin: 0 !important;
 }
 
 @media (forced-colors: active) {
