@@ -1,97 +1,3 @@
-<style>
-  .description-tab-items {
-    background-color: #FF97AB;
-    text-align: center;
-  }
-  .description-tab-item-button {
-    all: unset;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0;
-    padding: 16px;
-    color: #FFFFFF;
-
-  }
-  .description-tab-item-button.active {
-    border-bottom: 2px solid #E75B74;
-  }
-  .description-tab-content {
-    display: none;
-    gap: 43px;
-    justify-content: center;
-  }
-  .description-tab-content.active {
-    display: flex;
-  }
-  .description-tab-image {
-    max-width: 446px;
-    max-height: 356px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .description-tab-text p {
-    max-width: 565px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0;
-  }
-  .description-tab-text .short-desc {
-    margin-bottom: 20px;
-  }
-  .description-tab-text .long-desc strong {
-    font-weight: 700;
-    line-height: 28px;
-  }
-  .description-tab-image img {
-    width: 100%;
-    height: 100%;
-  }
-  .description-warning {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 67px;
-  }
-
-  .description-warning-text {
-    max-width: 291px;
-    width: 100%;
-    display: flex;
-    border-radius: 41px;
-    box-shadow: 0 4px 20px 5px #0000000D;
-    overflow: hidden;
-    align-items: center;
-    height: 59px;
-  }
-  .warning-banner {
-    background-color: #FF2805;
-    padding-left: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 59px;
-    padding-right: 19px;
-  }
-  .description-w {
-    max-width: 797px;
-    text-align: center;
-    margin: 26px 0 0;
-  }
-  .description-warning-banner-text p {
-    color: #FF2805;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0;
-    padding: 0 0 0 23px;
-    margin: 0;
-  }
-
-</style>
 <section>
   <div>
     {% if section.blocks.size > 1 %}
@@ -146,24 +52,27 @@
     document.addEventListener('DOMContentLoaded', function() {
         const tabButtons = document.querySelectorAll('.description-tab-item-button');
         const tabContents = document.querySelectorAll('.description-tab-content');
-                tabContents[0].classList.add('active');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab-id');
-                    tabContents.forEach(tabcontent => {
-                        tabcontent.classList.remove('active');
+        tabButtons[0].classList.add('active');
+        tabContents[0].classList.add('active');
 
-                        if (tabcontent.getAttribute('data-tab-id') === tabId) {
-                            tabcontent.classList.add('active');
-                            button.classList.add('active');
-                        } else {
-                            tabcontent.classList.remove('active');
-                            button.classList.remove('active');
-                        }
-                    });
+        tabButtons.forEach(button => {
+            button.classList.remove('active');
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab-id');
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                tabContents.forEach(tabcontent => {
+                    tabcontent.classList.remove('active');
+                    if (tabcontent.getAttribute('data-tab-id') === tabId) {
+                        tabcontent.classList.add('active');
+                    } else {
+                        tabcontent.classList.remove('active');
+                    }
                 });
             });
+        });
     });
 </script>
 {% schema %}

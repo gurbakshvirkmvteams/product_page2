@@ -173,7 +173,7 @@
           "settings": {
             "description_title_button": "Description",
             "short_descrition": "Have you ever wondered what your pet would look like as a cute cartoon character? Well, my name is Irene de Prada and I'm a professional artist specializing in cute pet portraits!",
-            "descrition": "<p><strong>Why choose me?</strong></p><p>• <strong>Hand drawn custom pet artwork</strong> created with love, care and attention to detail</p><p>• Express your pet's unique personality and facial expression with a unique piece of art</p><p>• The most thoughtful, jaw-dropping gift to pet owners everywhere with a satisfaction guarantee.</p><p>• <strong>I offer free previews and unlimited revisions with every order</strong> -  satisfaction guaranteed for every pet parent!</p>",
+            "descrition": "<p><strong>Why choose me?</strong></p><p><strong><br/></strong></p><p>• <strong>Hand drawn custom pet artwork</strong> created with love, care and attention to detail</p><p>• Express your pet's unique personality and facial expression with a unique piece of art</p><p>• The most thoughtful, jaw-dropping gift to pet owners everywhere with a satisfaction guarantee.</p><p>• <strong>I offer free previews and unlimited revisions with every order</strong> -  satisfaction guaranteed for every pet parent!</p>",
             "description_image": "shopify://shop_images/bd80f2c1b6bab627e570160b64cc3fcb883e4c2d.png"
           }
         },
@@ -245,6 +245,8 @@
       "settings": {
         "procedure_section_heading": "How it works",
         "procedure_background_color": "#f3eed7",
+        "paw_trail_1": "shopify://shop_images/Frame_6.svg",
+        "paw_trail_2": "shopify://shop_images/Frame_7.svg",
         "padding_top": 58,
         "padding_bottom": 74
       }
@@ -386,7 +388,7 @@
       "name": "Our Club",
       "settings": {
         "club_cards_section_heading": "New Scene With Your Pet Every Month!",
-        "club_cards_section_description": "x",
+        "club_cards_section_description": "Join the Toonie Club and receive a surprise piece of digital artwork every single month!",
         "club_button_link": "shopify://pages/about",
         "club_button_text": "Join the Toonie Club",
         "padding_top": 57,
@@ -525,10 +527,142 @@
       ],
       "name": "FAQ Accordion",
       "settings": {
-        "padding_top": 32,
+        "padding_top": 50,
         "padding_bottom": 86,
         "faq_background_color": "#f8f8f8",
         "faq_section_title": "Frequently Asked Questions"
+      }
+    },
+    "review_top_LBBW63": {
+      "type": "review-top",
+      "blocks": {
+        "image_7dHVeE": {
+          "type": "image",
+          "settings": {
+            "review_card_image": "shopify://shop_images/479431c065989efc538ba8261962420dbf20b203_1.png"
+          }
+        },
+        "image_fHh4Rd": {
+          "type": "image",
+          "settings": {
+            "review_card_image": "shopify://shop_images/2467ef91857afb334689581ec214561656b7db72.png"
+          }
+        },
+        "image_VkmU39": {
+          "type": "image",
+          "settings": {
+            "review_card_image": "shopify://shop_images/07fbe4f23c3a2a00a801497aaa6e7e10e2b2a3a1.png"
+          }
+        },
+        "image_J76DJt": {
+          "type": "image",
+          "settings": {
+            "review_card_image": "shopify://shop_images/775ac186a64980d2d3a135066382e9e40abaf20a.png"
+          }
+        },
+        "image_Rm8DCH": {
+          "type": "image",
+          "settings": {
+            "review_card_image": "shopify://shop_images/23d6a4defb8480e1a3ac68092192bad18834dedf.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_7dHVeE",
+        "image_fHh4Rd",
+        "image_VkmU39",
+        "image_J76DJt",
+        "image_Rm8DCH"
+      ],
+      "name": "Review Top",
+      "settings": {
+        "padding_top": 57,
+        "padding_bottom": 68,
+        "description_background_color": "#f1dce3",
+        "review_heading": "People love us",
+        "description_tagline": "<p>Ive had two separate PetToonies created by Irene and I absolutely love them both. Getting ready to order another for my new puppy!</p>"
+      }
+    },
+    "1788765780cd4cd231": {
+      "type": "apps",
+      "blocks": {
+        "ali_reviews_widget_star_rating_QKYkae": {
+          "type": "shopify://apps/ali-reviews/blocks/widget-star-rating/bf2eea72-0400-4db1-8908-44b7418f9a88",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "ali_reviews_widget_box_3MkcMr": {
+          "type": "shopify://apps/ali-reviews/blocks/widget-box/bf2eea72-0400-4db1-8908-44b7418f9a88",
+          "settings": {
+            "product": "",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "ali_reviews_widget_star_rating_QKYkae",
+        "ali_reviews_widget_box_3MkcMr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "social_videos_AWFLHX": {
+      "type": "social-videos",
+      "blocks": {
+        "video_jM39cQ": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_Fgk7xx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_MrRrwr": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_fehqhF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_YpLnxd": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_xYkPgp": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_jM39cQ",
+        "video_Fgk7xx",
+        "video_MrRrwr",
+        "video_fehqhF",
+        "video_YpLnxd",
+        "video_xYkPgp"
+      ],
+      "name": "TikTok videos",
+      "settings": {
+        "padding_top": 57,
+        "padding_bottom": 68,
+        "our_social_logo": "shopify://shop_images/a81f170d55aeda311cc774f938d8872f6432c938_3.png",
+        "our_social_handle": "#pettoonies"
       }
     }
   },
@@ -544,6 +678,9 @@
     "our_shipping_features_zPxzzt",
     "subscription_cards_EcRNeQ",
     "our_social_PiLztQ",
-    "faq_accordian_9Taqaa"
+    "faq_accordian_9Taqaa",
+    "review_top_LBBW63",
+    "1788765780cd4cd231",
+    "social_videos_AWFLHX"
   ]
 }

@@ -23,7 +23,7 @@
     >
     {% comment %} {{ product.options_with_values | json }} {% endcomment %}
       {%- for option in product.options_with_values -%}
-        
+        {% comment %} {{ option | json }} {% endcomment %}
         <fieldset class="js product-form__input {% if option.name == "Choose your Size:" %} size-inputs-fielset {% endif %}">
           <legend class="form__label custom-form__label">{{ option.name }}</legend>
           {% render 'product-variant-options', product: product, option: option, block: block %}

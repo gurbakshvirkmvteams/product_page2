@@ -14,9 +14,6 @@
     block: block
   %}
 {% endcomment %}
-<style>
-
-</style>
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'
@@ -63,15 +60,15 @@
         class="disabled"
       {% endif %}
     >
-    {% for value in option.values %}
-      {% comment %} {{ value.name | json }} {% endcomment %}
-      {% assign hex_color = value.swatch.color %}
+      {% comment %} {{ value.swatch.color }} {% endcomment %}
+      {% comment %} {% assign hex_color = value.swatch.color %} {% endcomment %}
       {% comment %} {{ hex_color }} {% endcomment %}
-    {% endfor %}
 
     <label 
       {% if option.name == "Format:" %}class="format-rounded-label"{% endif %}
-      {% if option.name == "Background Color:" %}class="color-circle-label" style="background: {{ hex_color }};"{% endif %} 
+      {% if option.name == "Background Color:" %}class="color-circle-label" style="background: {{ value.swatch.color }};
+      --check-bg:{{ value.swatch.color }};
+      "{% endif %} 
       {% if option.name == "Choose your Size:" %}class="number-square-label" {% endif %}
         for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
     >

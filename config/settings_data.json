@@ -159,10 +159,15 @@
       },
       "9353966647761843822": {
         "type": "shopify://apps/uploadfly/blocks/uploadfly_cart/0e4c51b1-4134-4114-9565-60979f723166",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "liquid_code_cart": ""
         }
+      },
+      "8924079168617604943": {
+        "type": "shopify://apps/ali-reviews/blocks/widget-popup/bf2eea72-0400-4db1-8908-44b7418f9a88",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

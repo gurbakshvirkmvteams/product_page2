@@ -1,41 +1,4 @@
-<style>
-  .tiktok-section{
-    text-align: center;
-  }
-.tiktok-section__header{
-    margin-bottom:44px;
-}
-.tiktok-section__subtitle{
-    margin:0;
-}
-.tiktok-section__logo {
-    display: inline-block;
-    max-width: 180px;
-    max-height: 80px;
-}
-.tiktok-section__logo img{
-    width: 100%;
-    height: 100%;
-}
-.tiktok-section__videos{
-    display: flex;
-    gap:10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.tiktok-card{
-    max-width: 289px;
-    width: 100%;
-    height: 379px;
-}
-.tiktok-card video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-</style>
-
-<section class="tiktok-section  page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+<section class="tiktok-section page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color:{{ section.settings.social_section_background }}">
   <div class="tiktok-section__header">
     {% if section.settings.our_social_logo != blank %}
       <div class="tiktok-section__logo">
@@ -65,7 +28,13 @@
   {
     "name": "TikTok videos",
     "settings": [
-        {
+      {
+        "type": "color",
+        "id": "social_section_background",
+        "label": "Add Background Color",
+        "default": "#F8F8F8"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 10,
