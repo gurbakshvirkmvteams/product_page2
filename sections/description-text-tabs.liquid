@@ -42,7 +42,7 @@
             <p>Attention</p>
           </div>
         </div>
-        <p class="description-w">{{ section.settings.description_warning_text }}</p>
+        <div class="description-w">{{ section.settings.description_warning_text }}</div>
       </div>
     </div>
 
@@ -98,10 +98,10 @@
         "unit": "px",
         "label": "Padding Bottom"
       }, {
-        "type": "text",
+        "type": "richtext",
         "id": "description_warning_text",
         "label": "Warning Text",
-        "default": "Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!"
+        "default": "<p>Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!</p>"
       }
     ],
     "blocks": [

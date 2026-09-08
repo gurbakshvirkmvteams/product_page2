@@ -1,0 +1,147 @@
+{% style %}
+.custom-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .custom-marquee__track {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    animation: custom-marquee-scroll {{ section.settings.speed }}s linear infinite;
+  }
+
+  .custom-marquee__group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .custom-marquee__item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  @keyframes custom-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+{% endstyle %}
+
+<div class="custom-marquee">
+  <div class="custom-marquee__track">
+    <div class="custom-marquee__group">
+      {% for block in section.blocks %}
+        <div
+          class="custom-marquee__item"
+        >
+          {{ block.settings.text }}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="custom-marquee__group" aria-hidden="true">
+      {% for block in section.blocks %}
+        <div class="custom-marquee__item">
+          {{ block.settings.text }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F88FA9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Animation speed",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "default": 20,
+      "unit": "s"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marquee_text",
+      "name": "Marquee text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Free with any supplement subscription"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee text"
+    }
+  ]
+}
+{% endschema %}

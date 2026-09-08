@@ -1,3 +1,41 @@
+{% style %}
+  .tiktok-card__video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .tiktok-card__video-wrapper video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .tiktok-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .tiktok-card__play svg {
+    width: 49px;
+    height: 59px;
+    display: block;
+  }
+  .tiktok-card__play.is-hidden {
+    display: none;
+  }
+{% endstyle %}
 <section class="tiktok-section page-width" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color:{{ section.settings.social_section_background }}">
   <div class="tiktok-section__header">
     {% if section.settings.our_social_logo != blank %}
@@ -5,25 +43,70 @@
         {{ section.settings.our_social_logo | image_url: width: 200 | image_tag }}
       </div>
     {% endif %}
-
-    <p class="tiktok-section__subtitle">Follow us on
-      <span>{{ section.settings.our_social_handle }}</span>
-    </p>
+    <div class="tiktok-section__subtitle">
+      <p class="">Follow us on</p>
+      {{ section.settings.our_social_handle }}
+    </div>
   </div>
-
   <div class="tiktok-section__videos">
     {% for block in section.blocks %}
       <div class="tiktok-card" {{ block.shopify_attributes }}>
         {% if block.settings.video != blank %}
-          {{ block.settings.video | video_tag: loop: true, muted: true, controls: false, playsinline: true }}
-
-          <div class="tiktok-card__play"></div>
+          <div class="tiktok-card__video-wrapper">
+            {{ block.settings.video | video_tag: loop: true, muted: true, controls: false, playsinline: true
+            }}
+            <button
+              type="button"
+              class="tiktok-card__play"
+              aria-label="Play video">
+              <svg
+                width="49"
+                height="59"
+                viewBox="0 0 49 59"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M47.1047 25.7309L4.69219 0.4875C4.17422 0.182812 3.64102 0 3.03164 0C1.37109 0 0.0152341 1.37109 0.0152341 3.04688H0V55.4531H0.0152341C0.0152341 57.1289 1.37109 58.5 3.03164 58.5C3.65625 58.5 4.17422 58.2867 4.73789 57.982L47.1047 32.7691C48.1102 31.9313 48.75 30.6668 48.75 29.25C48.75 27.8332 48.1102 26.584 47.1047 25.7309Z"
+                  fill="white"
+                  fill-opacity="0.9" />
+              </svg>
+            </button>
+          </div>
         {% endif %}
       </div>
     {% endfor %}
   </div>
 </section>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoCards = document.querySelectorAll('.tiktok-card');
+    videoCards.forEach(function (card) {
+      const video = card.querySelector('video');
+      const playButton = card.querySelector('.tiktok-card__play');
+      if (!video || !playButton) return;
+      playButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        video.play();
+      });
+      video.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+      video.addEventListener('play', function () {
+        playButton.classList.add('is-hidden');
+      });
+      video.addEventListener('pause', function () {
+        playButton.classList.remove('is-hidden');
+      });
+      video.addEventListener('ended', function () {
+        playButton.classList.remove('is-hidden');
+      });
+    });
+  });
+</script>
 {% schema %}
   {
     "name": "TikTok videos",
@@ -59,7 +142,7 @@
         "id": "our_social_logo",
         "label": "Add Logo"
       }, {
-        "type": "text",
+        "type": "richtext",
         "id": "our_social_handle",
         "label": "Add Social Handle"
       }

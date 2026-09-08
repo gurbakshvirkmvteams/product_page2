@@ -37,3 +37,14 @@
 - added js logic for faq section
 - Created social video section videos as blocks for video uploads
 - adjusted navbar according to figma design
+--accentt-2
+
+
+# Pettoonies™ Your Pet as a Cartoon
+-- added custom color variables in theme settings 
+-- added colors to all sections from theme settings
+-- Created custom marquee sectio n
+-- added js to social video section
+-- made background color swatch working
+-- made all sections responsive
+-- Created footer section according to figma

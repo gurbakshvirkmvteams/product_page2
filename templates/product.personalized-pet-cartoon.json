@@ -208,6 +208,62 @@
         "description_warning_text": "Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!"
       }
     },
+    "social_videos_AWFLHX": {
+      "type": "social-videos",
+      "blocks": {
+        "video_jM39cQ": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_Fgk7xx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_MrRrwr": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_fehqhF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_YpLnxd": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        },
+        "video_xYkPgp": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_jM39cQ",
+        "video_Fgk7xx",
+        "video_MrRrwr",
+        "video_fehqhF",
+        "video_YpLnxd",
+        "video_xYkPgp"
+      ],
+      "name": "TikTok videos",
+      "settings": {
+        "padding_top": 57,
+        "padding_bottom": 68,
+        "our_social_logo": "shopify://shop_images/a81f170d55aeda311cc774f938d8872f6432c938_3.png",
+        "our_social_handle": "#pettoonies"
+      }
+    },
     "procedure_fKjP6j": {
       "type": "procedure",
       "blocks": {
@@ -608,62 +664,6 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "social_videos_AWFLHX": {
-      "type": "social-videos",
-      "blocks": {
-        "video_jM39cQ": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        },
-        "video_Fgk7xx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        },
-        "video_MrRrwr": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        },
-        "video_fehqhF": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        },
-        "video_YpLnxd": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        },
-        "video_xYkPgp": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/10835749-hd_1920_1080_25fps.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_jM39cQ",
-        "video_Fgk7xx",
-        "video_MrRrwr",
-        "video_fehqhF",
-        "video_YpLnxd",
-        "video_xYkPgp"
-      ],
-      "name": "TikTok videos",
-      "settings": {
-        "padding_top": 57,
-        "padding_bottom": 68,
-        "our_social_logo": "shopify://shop_images/a81f170d55aeda311cc774f938d8872f6432c938_3.png",
-        "our_social_handle": "#pettoonies"
-      }
     }
   },
   "order": [
@@ -673,6 +673,7 @@
     "related-products",
     "our_shipping_features_L79Gm7",
     "description_text_tabs_EtzfbP",
+    "social_videos_AWFLHX",
     "procedure_fKjP6j",
     "image_text_blocks_6NFmeg",
     "our_shipping_features_zPxzzt",
@@ -680,7 +681,6 @@
     "our_social_PiLztQ",
     "faq_accordian_9Taqaa",
     "review_top_LBBW63",
-    "1788765780cd4cd231",
-    "social_videos_AWFLHX"
+    "1788765780cd4cd231"
   ]
 }

@@ -14,45 +14,54 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "55172ef6-3a6a-4cfa-b790-88739b47891f": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "main-menu"
-          }
-        },
-        "6e0c08d4-cd4c-439c-b5e2-a483bba29ec2": {
+        "brand_information_7RhL8h": {
           "type": "brand_information",
           "settings": {
             "show_social": true
           }
         },
+        "55172ef6-3a6a-4cfa-b790-88739b47891f": {
+          "type": "link_list",
+          "settings": {
+            "heading": "MAIN MENU",
+            "menu": "pettoonies-menu"
+          }
+        },
+        "link_list_QTTraE": {
+          "type": "link_list",
+          "settings": {
+            "heading": "THE SERIOUS STUFF",
+            "menu": "pettoonies-menu"
+          }
+        },
         "f95fe295-fbc2-4d2b-a952-72670c2ab328": {
           "type": "text",
           "settings": {
-            "heading": "Resources",
-            "subtext": "<ul><li><a href=\"https://shopify.dev/docs/apps/tools/development-stores/generated-data\" target=\"_blank\" title=\"Generated test data developer docs\">Generated test data docs</a></li><li><a href=\"https://shopify.dev/docs/apps/tools/graphiql-admin-api\" target=\"_blank\" title=\"GraphiQL API explorer\">GraphiQL API explorer</a></li></ul>"
+            "heading": "COMPANY DETAILS",
+            "subtext": "<p>PETTOONIES is a brand owned by</p><p>B2LOCAL OU</p><p>Sepapaja 6, 15551 Tallinn ESTONIA, UROPEAN UNION</p><p>VAT ID: EE102060540 / Reg. no: 144462460</p><p>Contact details: support@pettoonies.com</p><p>Phone: +1 609-293-4348</p>"
           }
         }
       },
       "block_order": [
+        "brand_information_7RhL8h",
         "55172ef6-3a6a-4cfa-b790-88739b47891f",
-        "6e0c08d4-cd4c-439c-b5e2-a483bba29ec2",
+        "link_list_QTTraE",
         "f95fe295-fbc2-4d2b-a952-72670c2ab328"
       ],
       "settings": {
+        "footer_logo": "shopify://shop_images/a5dc8d58f79a0398a9c5e668de3e97f309f850e6.png",
         "color_scheme": "inverse",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": true,
         "payment_enable": true,
-        "show_policy": true,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     }
   },
