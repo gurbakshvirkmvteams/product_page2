@@ -363,8 +363,6 @@
                 <div class="background-styles-container">
                   {% for item in product.metafields.custom.background_styles.value %}
                     {% comment %} {{ item | json }} {% endcomment %}
-
-                    {% comment %} <h3>{{ item.style_name }}</h3>  {% endcomment %}
                     <div class="background-style-item">
                       <button class="background-styles" data-set="{{ item.style_name }}">
                         {% if item.one_colour != blank %}

@@ -23,7 +23,6 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 {% comment %} {{ option | json }} {% endcomment %}
-
 {%- for value in option.values -%}
   {%- liquid
     assign option_disabled = true
@@ -60,10 +59,6 @@
         class="disabled"
       {% endif %}
     >
-      {% comment %} {{ value.swatch.color }} {% endcomment %}
-      {% comment %} {% assign hex_color = value.swatch.color %} {% endcomment %}
-      {% comment %} {{ hex_color }} {% endcomment %}
-
     <label 
       {% if option.name == "Format:" %}class="format-rounded-label"{% endif %}
       {% if option.name == "Background Color:" %}class="color-circle-label" style="background: {{ value.swatch.color }};
