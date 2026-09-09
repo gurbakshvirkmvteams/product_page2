@@ -17,16 +17,23 @@
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
-        data-update-url="false"
+      data-update-url="false"
       {% endif %}
-      {{ block.shopify_attributes }}
-    >
-    {% comment %} {{ product.options_with_values | json }} {% endcomment %}
+      {{ block.shopify_attributes }}>
+      {% comment %} {{ product.options_with_values | json }} {% endcomment %}
       {%- for option in product.options_with_values -%}
         {% comment %} {{ option | json }} {% endcomment %}
         <fieldset class="js product-form__input {% if option.name == "Choose your Size:" %} size-inputs-fielset {% endif %}">
-          <legend class="form__label custom-form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options', product: product, option: option, block: block %}
+          <legend class="form__label custom-form__label">
+            {{ option.name }}
+            <span class="selected-option-value">
+              {{ option.selected_value }}
+            </span>
+          </legend>
+          {% render 'product-variant-options'
+            , product: product
+            , option: option
+            , block: block %}
         </fieldset>
       {%- endfor -%}
       <script type="application/json">
@@ -40,10 +47,9 @@
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
-        data-update-url="false"
+      data-update-url="false"
       {% endif %}
-      {{ block.shopify_attributes }}
-    >
+      {{ block.shopify_attributes }}>
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="aaa form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
@@ -54,9 +60,11 @@
               id="Option-{{ section.id }}-{{ forloop.index0 }}"
               class="select__select"
               name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
-              {% render 'product-variant-options', product: product, option: option, block: block %}
+              form="{{ product_form_id }}">
+              {% render 'product-variant-options'
+                , product: product
+                , option: option
+                , block: block %}
             </select>
             {% render 'icon-caret' %}
           </div>
@@ -80,18 +88,16 @@
         name="id"
         id="Variants-{{ section.id }}"
         class="select__select"
-        form="{{ product_form_id }}"
-      >
+        form="{{ product_form_id }}">
         {%- for variant in product.variants -%}
           <option
             {% if variant == product.selected_or_first_available_variant %}
-              selected="selected"
+            selected="selected"
             {% endif %}
             {% if variant.available == false %}
-              disabled
+            disabled
             {% endif %}
-            value="{{ variant.id }}"
-          >
+            value="{{ variant.id }}">
             {%- liquid
               echo variant.title
               echo variant.price | money | strip_html | prepend: ' - '
@@ -122,3 +128,23 @@
     </div>
   </div>
 </noscript>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const variantRadios = document.querySelector('variant-radios');
+  if (!variantRadios) return;
+  function updateValues() {
+    const fiels = variantRadios.querySelectorAll('fieldset');
+    fiels.forEach(function (field) {
+      const selectedValue = field.querySelector('input[type="radio"]:checked');
+      const elementValue = field.querySelector('.selected-option-value');
+      if (selectedValue && elementValue) {
+        elementValue.textContent = selectedValue.value;
+      }
+    });
+  }
+  updateValues();
+  variantRadios.addEventListener('change', function () {
+    updateValues();
+  });
+});
+</script>

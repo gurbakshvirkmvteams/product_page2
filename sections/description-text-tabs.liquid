@@ -56,8 +56,8 @@
         tabContents[0].classList.add('active');
 
         tabButtons.forEach(button => {
-            button.classList.remove('active');
             button.addEventListener('click', () => {
+             tabButtons.forEach(button => {button.classList.remove('active');})
                 const tabId = button.getAttribute('data-tab-id');
                 tabButtons.forEach(btn => {
                     btn.classList.remove('active');

@@ -19,6 +19,50 @@
         "product_hero_tagline": "<h3>upto <strong>25%</strong> off every month</h3>"
       }
     },
+    "marquee_text_i78rri": {
+      "type": "marquee-text",
+      "blocks": {
+        "marquee_text_yYPMwz": {
+          "type": "marquee_text",
+          "settings": {
+            "text": "Free with any supplement subscription"
+          }
+        },
+        "marquee_text_PVDz8T": {
+          "type": "marquee_text",
+          "settings": {
+            "text": "Free with any supplement subscription"
+          }
+        },
+        "marquee_text_E9jNY8": {
+          "type": "marquee_text",
+          "settings": {
+            "text": "Free with any supplement subscription"
+          }
+        },
+        "marquee_text_wgUfL4": {
+          "type": "marquee_text",
+          "settings": {
+            "text": "Free with any supplement subscription"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_text_yYPMwz",
+        "marquee_text_PVDz8T",
+        "marquee_text_E9jNY8",
+        "marquee_text_wgUfL4"
+      ],
+      "name": "Marquee text",
+      "settings": {
+        "background_color": "#FF97AB",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "speed": 20,
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
     "1788331179760be415": {
       "type": "apps",
       "blocks": {
@@ -32,6 +76,7 @@
       "block_order": [
         "novo_bar_builder_ticker_new_VW38bp"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -101,6 +146,7 @@
         "mobile_thumbnails": "hide",
         "hide_variants": false,
         "enable_video_looping": false,
+        "custom_guide": "shopify://pages/about",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -161,7 +207,7 @@
         "section_heading": "",
         "background_color": "#f8f8f8",
         "padding_top": 42,
-        "padding_bottom": 14,
+        "padding_bottom": 34,
         "card_style": "small-icon-large-heading"
       }
     },
@@ -205,7 +251,7 @@
       "settings": {
         "padding_top": 61,
         "padding_bottom": 89,
-        "description_warning_text": "Due to the recent high demand for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is your lucky day. Hurry and order now while there are spaces left!"
+        "description_warning_text": "<p>Due to the <strong>recent high demand</strong> for my work and the number of orders I am receiving, I can only take a set amount of orders per day. If the add to cart button still works, it means it is <strong>your lucky day</strong>. Hurry and order now while there are spaces left!</p>"
       }
     },
     "social_videos_AWFLHX": {
@@ -258,10 +304,11 @@
       ],
       "name": "TikTok videos",
       "settings": {
+        "social_section_background": "#f8f8f8",
         "padding_top": 57,
         "padding_bottom": 68,
         "our_social_logo": "shopify://shop_images/a81f170d55aeda311cc774f938d8872f6432c938_3.png",
-        "our_social_handle": "#pettoonies"
+        "our_social_handle": "<p><a href=\"/pages/about\" title=\"About\">#pettoonies</a></p>"
       }
     },
     "procedure_fKjP6j": {
@@ -668,6 +715,7 @@
   },
   "order": [
     "product_page_hero_pnBDiV",
+    "marquee_text_i78rri",
     "1788331179760be415",
     "main",
     "related-products",
